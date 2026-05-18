@@ -1,0 +1,5 @@
+In python you can automate tasks. 
+In python you can write strings, int, bools, floats.
+In python you can associate data in key value pairs.
+In python you can iterate through a list. 
+In python you can make classes for objects.
