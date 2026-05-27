@@ -1,26 +1,26 @@
 import pygame
 
-class Ship:
+class BattleShip:
     """A class to manage the ship."""
     
-    def __init__(self, ai_game):
+    def __init__(self, bs_game):
         """Initialize the ship and set its starting position."""
-        self.screen = ai_game.screen #
-        self.settings = ai_game.settings
-        self.screen_rect = ai_game.screen.get_rect()
+        self.screen = bs_game.screen #
+        self.settings = bs_game.shooter_settings
+        self.screen_rect = bs_game.screen.get_rect()
         
         #Load the ship image and get its rect. 
-        self.image = pygame.image.load('Part II\\alien_invasion\\alien_invasion_game\\images\\ship.bmp')
+        self.image = pygame.image.load("Part II\\alien_invasion\\12-6 Sideways Shooter\\images\\ship (2).bmp")
         self.rect = self.image.get_rect()
         
         #Start each chip at bottom center of the screen. 
-        self.rect.midbottom = self.screen_rect.midbottom
+        self.rect.center = self.screen_rect.center
         
         #Store a float for the ship's exact  position.
         self.x = float(self.rect.x)
         self.y = float(self.rect.y)
         
-        #Movement flags: start with a ship that's not moving by using False. 
+        #Movement flags: start with a ship that's not moving. 
         self.moving_right = False
         self.moving_left = False
         self.moving_up = False
@@ -43,14 +43,7 @@ class Ship:
         #Update rect object from self.x.
         self.rect.x = int(self.x)
         self.rect.y = int(self.y) 
-
-        self.center_ship()
         
-    def center_ship(self):
-        """Center the ship on the screen."""
-        self.rect.bottom = self.screen_rect.bottom
-        self.x = float(self.rect.x)
-               
     def blitme(self):
         """Draw the ship at its current location."""
         
