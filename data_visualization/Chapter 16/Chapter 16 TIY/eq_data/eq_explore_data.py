@@ -29,7 +29,6 @@ for eq_dict in all_eq_dicts:
     lats.append(lat)
     eq_titles.append(eq_title)
 
-
 title = 'Global Earthquakes'
 fig = px.scatter_geo(
     lat = lats, lon = lons, title = title,
@@ -37,6 +36,7 @@ fig = px.scatter_geo(
     labels = {'color': 'Magnitude'}, projection = 'natural earth',
     hover_name = eq_titles, 
     )
+
 fig.show()
 #print(mags[:10])
 #print(lons[:5])
